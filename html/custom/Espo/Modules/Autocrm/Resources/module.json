@@ -1,0 +1,8 @@
+{
+	"name": "Autocrm",
+	"label": "Autocrm",
+	"description": "Autocrm Customizations",
+	"version": "1.0.0",
+	"author": "Erik Furik",
+	"order": 9000
+}

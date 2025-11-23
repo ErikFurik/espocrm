@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+    web:
+        image: espocrm/espocrm:latest
+        container_name: espocrm-web
+        ports:
+            - "8080:80"
+        volumes:
+            - ./html:/var/www/html
+            - ./data:/var/www/html/data
+        environment:
+            ESPOCRM_DATABASE_HOST: db
+            ESPOCRM_DATABASE_PORT: 3306
+            ESPOCRM_DATABASE_USER: espocrm
+            ESPOCRM_DATABASE_PASSWORD: espopass
+            ESPOCRM_DATABASE_NAME: espocrm
+        depends_on:
+            - db
+
+    db:
+        image: mariadb:10.6
+        container_name: espocrm-db
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpass
+            MYSQL_DATABASE: espocrm
+            MYSQL_USER: espocrm
+            MYSQL_PASSWORD: espopass
+        volumes:
+            - db_data:/var/lib/mysql
+
+volumes:
+    db_data:

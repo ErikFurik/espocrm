@@ -1,0 +1,12 @@
+{
+	"detailActionList": [
+		"__APPEND__",
+		{
+			"label": "FindContacts",
+			"name": "findContacts",
+			"acl": "read",
+			"aclScope": "Lead",
+			"handler": "Autocrm:find-contacts-handler"
+		}
+	]
+}

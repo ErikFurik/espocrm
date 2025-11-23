@@ -1,0 +1,11 @@
+[
+	{
+		"route": "/LeadContacts/:email",
+		"method": "get",
+		"params": {
+			"controller": "Espo\\Modules\\Autocrm\\Controllers\\FindContacts",
+			"action": "getActionFind",
+			"email": ":email"
+		}
+	}
+]
